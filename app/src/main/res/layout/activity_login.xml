@@ -2,9 +2,25 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/StudyBuddy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
+
+    <Button
+        android:id="@+id/btn_subjects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is Login "
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="311dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
