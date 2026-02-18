@@ -1,5 +1,6 @@
 package com.example.studybuddy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -17,7 +18,11 @@ public class Subject extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_subject);
 
-        Button
+        Button btnBack = findViewById(R.id.btn_todashboard);
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(Subject.this, Dashboard.class);
+            startActivity(intent);
+        });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.StudyBuddy), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

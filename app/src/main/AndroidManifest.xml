@@ -13,18 +13,23 @@
         android:theme="@style/Theme.StudyBuddy">
         <activity
             android:name=".Subject"
+            android:excludeFromRecents="true"
             android:exported="false" />
         <activity
             android:name=".Profile"
+            android:excludeFromRecents="true"
             android:exported="false" />
         <activity
             android:name=".Dashboard"
+            android:excludeFromRecents="true"
             android:exported="false" />
         <activity
             android:name=".Login"
+            android:excludeFromRecents="true"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
+            android:excludeFromRecents="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

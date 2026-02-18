@@ -1,5 +1,6 @@
 package com.example.studybuddy;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -9,12 +10,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.content.Intent;
-import android.view.View;
 
 public class Dashboard extends AppCompatActivity {
 
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +28,17 @@ public class Dashboard extends AppCompatActivity {
 
         btnLogout.setOnClickListener(v->{
             Intent intent = new Intent(Dashboard.this, Login.class);
+            startActivity(intent);
         });
 
         btnSubject.setOnClickListener( v->{
             Intent intent = new Intent(Dashboard.this, Subject.class);
+            startActivity(intent);
         });
 
         btnProfile.setOnClickListener( v->{
             Intent intent = new Intent(Dashboard.this, Profile.class);
+            startActivity(intent);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.StudyBuddy), (v, insets) -> {

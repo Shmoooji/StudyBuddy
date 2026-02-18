@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        Button btnLogin = findViewById(R.id.btn_subjects);
+        Button btnLogin = findViewById(R.id.btn_login);
 
 
         btnLogin.setOnClickListener(V->{
