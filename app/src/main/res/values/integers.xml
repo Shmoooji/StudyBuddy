@@ -1,0 +1,3 @@
+<resources>
+    <integer name="startup_delay">5000</integer>
+</resources>

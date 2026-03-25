@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="screen_background">#121212</color>
+    <color name="display_background">#1E1E1E</color>
+    <color name="display_text">#FFFFFF</color>
+    <color name="number_button">#2C2C2C</color>
+    <color name="operator_button">#FF9800</color>
+    <color name="clear_button">#EF5350</color>
+    <color name="equals_button">#66BB6A</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="operator_text">#FFFFFF</color>
+</resources>
