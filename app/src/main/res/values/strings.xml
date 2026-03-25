@@ -2,7 +2,6 @@
     <string name="app_name">Calculator-Midterms(Mock)</string>
     <string name="startup_message">Hello Curtney</string>
     <string name="default_display">0</string>
-
     <string name="btn_clear">C</string>
     <string name="btn_divide">/</string>
     <string name="btn_multiply">*</string>
@@ -12,6 +11,7 @@
     <string name="btn_dot">.</string>
     <string name="btn_custom">ID OP</string>
     <string name="division_error">Cannot divide by zero</string>
+    <string name="stud_Number">My stud Number: 20103408</string>
     <string name="btn_0">0</string>
     <string name="btn_1">1</string>
     <string name="btn_2">2</string>
