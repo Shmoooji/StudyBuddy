@@ -7,17 +7,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvDisplay;
 
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
-    private Button btnAdd, btnSubtract, btnMultiply, btnDivide, btnEquals, btnClear, btnDot;
+    private Button btnAdd, btnSubtract, btnMultiply, btnDivide, btnEquals, btnClear, btnDot, btnCustom;
 
     private String currentInput = "";
     private double firstOperand = 0;
     private String operator = "";
     private boolean isNewInput = false;
+    private boolean startupFinished = false;
+
+    private final int studentIdLastThree = 408;
+    private final double customFactor = studentIdLastThree / 100.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +49,45 @@ public class MainActivity extends AppCompatActivity {
         btnEquals = findViewById(R.id.btnEquals);
         btnClear = findViewById(R.id.btnClear);
         btnDot = findViewById(R.id.btnDot);
-
-        tvDisplay.setText(getString(R.string.startup_message));
-
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                tvDisplay.setText(getString(R.string.default_display));
-            }
-        }, getResources().getInteger(R.integer.startup_delay));
+        btnCustom = findViewById(R.id.btnCustom);
 
         setNumberClickListeners();
         setOperatorClickListeners();
         setSpecialClickListeners();
+        setCustomClickListener();
+
+        if (savedInstanceState != null) {
+            currentInput = savedInstanceState.getString("currentInput", "");
+            firstOperand = savedInstanceState.getDouble("firstOperand", 0);
+            operator = savedInstanceState.getString("operator", "");
+            isNewInput = savedInstanceState.getBoolean("isNewInput", false);
+            startupFinished = savedInstanceState.getBoolean("startupFinished", false);
+
+            String savedDisplay = savedInstanceState.getString("displayText", getString(R.string.default_display));
+            tvDisplay.setText(savedDisplay);
+        } else {
+            tvDisplay.setText(getString(R.string.startup_message));
+
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    tvDisplay.setText(getString(R.string.default_display));
+                    currentInput = getString(R.string.default_display);
+                    startupFinished = true;
+                }
+            }, getResources().getInteger(R.integer.startup_delay));
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("displayText", tvDisplay.getText().toString());
+        outState.putString("currentInput", currentInput);
+        outState.putDouble("firstOperand", firstOperand);
+        outState.putString("operator", operator);
+        outState.putBoolean("isNewInput", isNewInput);
+        outState.putBoolean("startupFinished", startupFinished);
     }
 
     private void setNumberClickListeners() {
@@ -66,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 Button clickedButton = (Button) view;
                 String digit = clickedButton.getText().toString();
 
-                if (isNewInput) {
+                if (isNewInput || currentInput.equals(getString(R.string.default_display))) {
                     currentInput = "";
                     isNewInput = false;
                 }
@@ -151,34 +182,47 @@ public class MainActivity extends AppCompatActivity {
                 switch (operator) {
                     case "+":
                         result = firstOperand + secondOperand;
-                        tvDisplay.setText(String.valueOf(result));
                         break;
-
                     case "-":
                         result = firstOperand - secondOperand;
-                        tvDisplay.setText(String.valueOf(result));
                         break;
-
                     case "*":
                         result = firstOperand * secondOperand;
-                        tvDisplay.setText(String.valueOf(result));
                         break;
-
                     case "/":
                         if (secondOperand == 0) {
-                            tvDisplay.setText(getString(R.string.default_display));
+                            tvDisplay.setText(getString(R.string.division_error));
                             currentInput = "";
                             operator = "";
                             isNewInput = true;
                             return;
                         } else {
                             result = firstOperand / secondOperand;
-                            tvDisplay.setText(String.valueOf(result));
                         }
                         break;
                 }
 
                 currentInput = String.valueOf(result);
+                tvDisplay.setText(currentInput);
+                operator = "";
+                isNewInput = true;
+            }
+        });
+    }
+
+    private void setCustomClickListener() {
+        btnCustom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (currentInput.isEmpty() || currentInput.equals(getString(R.string.division_error))) {
+                    return;
+                }
+
+                double currentValue = Double.parseDouble(currentInput);
+                double result = currentValue * customFactor;
+
+                currentInput = String.valueOf(result);
+                tvDisplay.setText(currentInput);
                 operator = "";
                 isNewInput = true;
             }

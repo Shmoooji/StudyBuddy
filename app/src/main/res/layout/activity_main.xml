@@ -36,8 +36,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:alignmentMode="alignMargins"
         android:columnCount="4"
-        android:rowCount="5"
+        android:rowCount="6"
         android:useDefaultMargins="true"
         app:layout_constraintTop_toBottomOf="@id/tvDisplay"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +160,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
-            android:layout_rowSpan="2"
             android:backgroundTint="@color/equals_button"
             android:text="@string/btn_equals"
             android:textColor="@color/operator_text"
@@ -196,16 +196,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btn0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="2"
-            android:backgroundTint="@color/number_button"
-            android:text="@string/btn_0"
-            android:textColor="@color/button_text"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/btnDot"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -213,6 +203,28 @@
             android:backgroundTint="@color/number_button"
             android:text="@string/btn_dot"
             android:textColor="@color/button_text"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:backgroundTint="@color/number_button"
+            android:text="@string/btn_0"
+            android:textColor="@color/button_text"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btnCustom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:backgroundTint="@color/operator_button"
+            android:text="@string/btn_custom"
+            android:textColor="@color/operator_text"
             android:textSize="24sp" />
 
     </GridLayout>

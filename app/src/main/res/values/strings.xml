@@ -10,7 +10,8 @@
     <string name="btn_add">+</string>
     <string name="btn_equals">=</string>
     <string name="btn_dot">.</string>
-
+    <string name="btn_custom">ID OP</string>
+    <string name="division_error">Cannot divide by zero</string>
     <string name="btn_0">0</string>
     <string name="btn_1">1</string>
     <string name="btn_2">2</string>
