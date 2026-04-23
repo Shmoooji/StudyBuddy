@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="brand_teal">#0F766E</color>
+    <color name="brand_teal_dark">#115E59</color>
+    <color name="brand_teal_light">#5EEAD4</color>
+    <color name="brand_amber">#F59E0B</color>
+    <color name="brand_amber_light">#FCD34D</color>
+
+    <color name="light_primary">#0F766E</color>
+    <color name="light_on_primary">#FFFFFF</color>
+    <color name="light_primary_container">#CCFBF1</color>
+    <color name="light_on_primary_container">#134E48</color>
+    <color name="light_secondary">#F59E0B</color>
+    <color name="light_on_secondary">#FFFFFF</color>
+    <color name="light_secondary_container">#FEF3C7</color>
+    <color name="light_on_secondary_container">#78350F</color>
+    <color name="light_background">#FFFFFF</color>
+    <color name="light_on_background">#0F172A</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="light_on_surface">#0F172A</color>
+    <color name="light_surface_variant">#F1F5F9</color>
+    <color name="light_on_surface_variant">#475569</color>
+    <color name="light_outline">#CBD5E1</color>
+    <color name="light_outline_variant">#E2E8F0</color>
+    <color name="light_error">#DC2626</color>
+    <color name="light_on_error">#FFFFFF</color>
+
+    <color name="dark_primary">#5EEAD4</color>
+    <color name="dark_on_primary">#0B3B37</color>
+    <color name="dark_primary_container">#115E59</color>
+    <color name="dark_on_primary_container">#CCFBF1</color>
+    <color name="dark_secondary">#FCD34D</color>
+    <color name="dark_on_secondary">#422006</color>
+    <color name="dark_secondary_container">#78350F</color>
+    <color name="dark_on_secondary_container">#FEF3C7</color>
+    <color name="dark_background">#0B1220</color>
+    <color name="dark_on_background">#F1F5F9</color>
+    <color name="dark_surface">#0F172A</color>
+    <color name="dark_on_surface">#F1F5F9</color>
+    <color name="dark_surface_variant">#1E293B</color>
+    <color name="dark_on_surface_variant">#CBD5E1</color>
+    <color name="dark_outline">#334155</color>
+    <color name="dark_outline_variant">#1E293B</color>
+    <color name="dark_error">#F87171</color>
+    <color name="dark_on_error">#450A0A</color>
+
+    <color name="status_ahead">#16A34A</color>
+    <color name="status_ahead_bg">#DCFCE7</color>
+    <color name="status_on_track">#0F766E</color>
+    <color name="status_on_track_bg">#CCFBF1</color>
+    <color name="status_behind">#D97706</color>
+    <color name="status_behind_bg">#FEF3C7</color>
+
+    <color name="chart_projected">#94A3B8</color>
+    <color name="chart_actual">#0F766E</color>
+    <color name="chart_fill_start">#330F766E</color>
+    <color name="chart_fill_end">#000F766E</color>
+</resources>
